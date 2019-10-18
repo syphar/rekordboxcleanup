@@ -32,3 +32,46 @@ Rekordbox can show you an external XML library. For this you have to configure t
   
 Now in the list of sources you will find the XML, including a new playlist. This playlist you now can drag&drop to your 
 normal library, and voilà. 
+
+
+# Commands 
+## `trackswithoutplaylist`
+```bash
+> python rekordbox.py trackswithoutplaylist --help
+Usage: rekordbox.py trackswithoutplaylist [OPTIONS] REKORDBOX_XML
+                                          DESTINATION_XML
+
+Options:
+  --help  Show this message and exit.
+```
+
+Creates a new playlist with all tracks that are not in any other playlist. 
+
+## `findduplicatetracks`
+```bash 
+python rekordbox.py findduplicatetracks --help
+Usage: rekordbox.py findduplicatetracks [OPTIONS] REKORDBOX_XML
+                                        DESTINATION_XML
+
+Options:
+  --help  Show this message and exit.
+```
+
+Finds duplicate tracks. The resulting playlist contains all the duplicates, sorted. 
+The command tries to handle mixes properly,  so "original mix" and "original remix" and so on are treated as the 
+same track. 
+
+## `additionalfiles`
+```bash
+python rekordbox.py additionalfiles --help
+Usage: rekordbox.py additionalfiles [OPTIONS] REKORDBOX_XML FOLDER
+
+Options:
+  --delete
+  --help    Show this message and exit.
+```
+
+Finds files in a certain folder that are not in the rekordbox library. With the option `--delete` they are deleted. 
+
+One use-case for me: find duplicate tracks with the other command, delete the duplicates from the library, cleanup the 
+files with this command. 
