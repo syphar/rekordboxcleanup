@@ -1,7 +1,6 @@
-from pathlib import PosixPath
-from pprint import pprint
-from urllib.parse import urlparse, unquote, urlencode, quote
 import unicodedata
+from pathlib import PosixPath
+from urllib.parse import urlparse, unquote, quote
 
 import click
 from lxml import etree
@@ -60,5 +59,3 @@ def additionalfiles(rekordbox_xml, folder, delete):
         if delete:
             click.echo('deleting')
             item.unlink()
-
-
